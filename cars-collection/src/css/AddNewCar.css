@@ -1,0 +1,8 @@
+/* To align the Add a car modal */
+
+#addCar {
+  position: fixed;
+  top: 25%;
+  left: 50vw;
+  transform: translate(-50%, 0) !important;
+}

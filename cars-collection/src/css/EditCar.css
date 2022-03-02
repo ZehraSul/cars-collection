@@ -1,0 +1,8 @@
+/* To align the edit car modal */
+
+#editCar {
+  position: fixed;
+  top: 25%;
+  left: 50vw;
+  transform: translate(-50%, 0) !important;
+}
