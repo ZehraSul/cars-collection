@@ -1,10 +1,11 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
+import { CARS_COLLECTION_URL } from "./config/config";
 
 function DeleteCar({ id, carsList, setCarsList }) {
   // Call API with the id of the document to delete
   const deleteHandler = () => {
-    fetch("http://localhost:8000/delete", {
+    fetch(`${CARS_COLLECTION_URL}/delete`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

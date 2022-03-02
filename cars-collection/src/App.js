@@ -6,6 +6,7 @@ import EditAllCars from "./Components/EditAllCars";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Logo from "../src/images/car.png";
+import { CARS_COLLECTION_URL } from "./config/config";
 
 function App() {
   /* Setting initial state */
@@ -17,7 +18,7 @@ function App() {
 
   /* Using useEffect to make the initial call to my api to display any documents that already exist in the database*/
   useEffect(() => {
-    fetch("http://localhost:8000/displayAll", {
+    fetch(`${CARS_COLLECTION_URL}/displayAll`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

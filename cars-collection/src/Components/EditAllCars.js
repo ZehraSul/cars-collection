@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Years from "./Years";
+import { CARS_COLLECTION_URL } from "./config/config";
 
 function EditAllCars({ carsList, setCarsList }) {
   // set the initial state of the modals
@@ -42,7 +43,7 @@ function EditAllCars({ carsList, setCarsList }) {
     // Trimming away the spaces from the user input
     if (updateText.trim() !== "") {
       // If the values are not empty strings the API call is made to update
-      fetch("http://localhost:8000/updateAll", {
+      fetch(`${CARS_COLLECTION_URL}/updateAll`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

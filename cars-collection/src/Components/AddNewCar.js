@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Years from "./Years";
+import { CARS_COLLECTION_URL } from "./config/config";
 import "../css/AddNewCar.css";
 
 function AddNewCar({
@@ -41,7 +42,7 @@ function AddNewCar({
       owner.trim() !== ""
     ) {
       // If the values are not empty strings the API call is made to create a new car entry
-      fetch("http://localhost:8000/create", {
+      fetch(`${CARS_COLLECTION_URL}/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Years from "./Years";
 import "../css/EditCar.css";
+import { CARS_COLLECTION_URL } from "./config/config";
 
 function EditCar({
   carsList,
@@ -38,7 +39,7 @@ function EditCar({
       owner.trim() !== ""
     ) {
       // If the values are not empty strings the API call is made to update
-      fetch("http://localhost:8000/update", {
+      fetch(`${CARS_COLLECTION_URL}/update`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
