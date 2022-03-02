@@ -2,5 +2,5 @@
 
 module.exports = function (app) {
   const car = require("../controllers/car.controller.js");
-  app.put("/update", car.updateById);
+  app.put("/api/update", car.updateById);
 };

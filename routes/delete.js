@@ -2,5 +2,5 @@
 
 module.exports = function (app) {
   const car = require("../controllers/car.controller.js");
-  app.delete("/delete", car.deleteCar);
+  app.delete("/api/delete", car.deleteCar);
 };
