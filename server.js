@@ -45,6 +45,16 @@ require("./routes/displayOlder.js")(app);
 require("./routes/update.js")(app);
 require("./routes/updateAll.js")(app);
 
+// Allows me to deploy backend and frontend as one project with Heroku
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "cars-collection/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.resolve(__dirname, "cars-collection", "build", "index.html")
+    );
+  });
+}
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   var err = new Error("Not Found");
@@ -77,16 +87,6 @@ mongoose.connection.on("error", function (e) {
 mongoose.connection.once("open", function () {
   console.log("Successfully connected to the database");
 });
-
-// Allows me to deploy backend and frontend as one project with Heroku
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "cars-collection/build")));
-  app.get("*", (req, res) => {
-    res.sendFile(
-      path.resolve(__dirname, "cars-collection", "build", "index.html")
-    );
-  });
-}
 
 // listening on port 8000
 const PORT = process.env.PORT || 8000;
