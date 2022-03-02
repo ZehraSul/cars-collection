@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Years from "./Years";
 import "../css/EditCar.css";
-import { CARS_COLLECTION_URL } from "./config/config";
+import { CARS_COLLECTION_URL } from "../config/config";
 
 function EditCar({
   carsList,

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
-import { CARS_COLLECTION_URL } from "./config/config";
+import { CARS_COLLECTION_URL } from "../config/config";
 
 function DisplayOlderCars({ setCarsList }) {
   // Set initial state of cars to be displayed
